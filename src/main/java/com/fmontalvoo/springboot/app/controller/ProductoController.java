@@ -1,6 +1,7 @@
 package com.fmontalvoo.springboot.app.controller;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,7 +29,13 @@ public class ProductoController {
 	}
 
 	@GetMapping("/{id}")
-	public Producto findById(@PathVariable Long id) {
+	public Producto findById(@PathVariable Long id) throws InterruptedException {
+		if (id.equals(5L))
+			throw new IllegalStateException("Registro contiene errores.");
+
+		if (id.equals(6L))
+			TimeUnit.SECONDS.sleep(5L);
+
 		return service.findById(id).orElse(null);
 	}
 
