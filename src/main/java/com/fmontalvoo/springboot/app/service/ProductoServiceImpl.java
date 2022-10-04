@@ -1,7 +1,6 @@
 package com.fmontalvoo.springboot.app.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,8 +23,19 @@ public class ProductoServiceImpl implements ProductoService {
 
 	@Override
 	@Transactional(readOnly = true)
-	public Optional<Producto> findById(Long id) {
-		return repository.findById(id);
+	public Producto findById(Long id) {
+		return repository.findById(id).orElse(null);
+	}
+
+	@Override
+	@Transactional
+	public Producto update(Long id, Producto producto) {
+		return repository.findById(id).map(p -> {
+			p.setNombre(producto.getNombre());
+			p.setPrecio(producto.getPrecio());
+			p.setCreatedAt(p.getCreatedAt());
+			return repository.save(p);
+		}).orElse(null);
 	}
 
 	@Override

@@ -9,7 +9,9 @@ public interface ProductoService {
 
 	public Producto save(Producto producto);
 
-	public Optional<Producto> findById(Long id);
+	public Producto findById(Long id);
+
+	public Producto update(Long id, Producto producto);
 
 	public void delete(Long id);
 
