@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "productos")
-public class Producto implements Serializable {
+public class ProductoBK implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,10 +30,10 @@ public class Producto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public Producto() {
+	public ProductoBK() {
 	}
 
-	public Producto(String nombre, Double precio) {
+	public ProductoBK(String nombre, Double precio) {
 		this.nombre = nombre;
 		this.precio = precio;
 	}

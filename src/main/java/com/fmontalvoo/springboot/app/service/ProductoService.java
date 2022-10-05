@@ -1,9 +1,8 @@
 package com.fmontalvoo.springboot.app.service;
 
 import java.util.List;
-import java.util.Optional;
 
-import com.fmontalvoo.springboot.app.models.Producto;
+import com.fmontalvoo.springboot.commons.models.Producto;
 
 public interface ProductoService {
 

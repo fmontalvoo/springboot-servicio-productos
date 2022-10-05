@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fmontalvoo.springboot.app.models.Producto;
 import com.fmontalvoo.springboot.app.service.ProductoService;
+import com.fmontalvoo.springboot.commons.models.Producto;
 
 @RestController
 @RequestMapping("/productos")

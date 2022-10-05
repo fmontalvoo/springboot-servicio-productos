@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.fmontalvoo.springboot.app.models.Producto;
 import com.fmontalvoo.springboot.app.repository.ProductoRepository;
+import com.fmontalvoo.springboot.commons.models.Producto;
 
 @Service
 public class ProductoServiceImpl implements ProductoService {
